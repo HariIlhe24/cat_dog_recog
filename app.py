@@ -10,7 +10,7 @@ def load_model():
 
 model = load_model()
 
-st.title("🐱🐶 Cat vs Dog Classifier")
+st.title("🐾 Cat vs Dog Classifier")  # Changed icon to 🐾
 
 # Upload image
 uploaded_file = st.file_uploader("Upload an image...", type=["jpg", "jpeg", "png"])
@@ -19,7 +19,6 @@ if uploaded_file is not None:
     # Display uploaded image
     image = Image.open(uploaded_file).convert("RGB")
     st.image(image, caption="Uploaded Image", use_container_width=True)
-
 
     # Preprocess (resize to model input size, e.g., 224x224)
     img = image.resize((224, 224))   # adjust to your training size
@@ -35,4 +34,4 @@ if uploaded_file is not None:
         if label == 0:
             st.success("It's a *Cat 🐱*")
         else:
-            st.success("It's a *Dog 🐶*")
+            st.success("It's a *Dog 🐶*")
